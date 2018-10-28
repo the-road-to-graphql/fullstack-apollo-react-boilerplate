@@ -2,9 +2,9 @@
 
 [![Build Status](https://travis-ci.org/the-road-to-graphql/fullstack-apollo-react-boilerplate.svg?branch=master)](https://travis-ci.org/the-road-to-graphql/fullstack-apollo-react-boilerplate) [![Slack](https://slack-the-road-to-learn-react.wieruch.com/badge.svg)](https://slack-the-road-to-learn-react.wieruch.com/)
 
-A full-fledged Apollo Server 2 with Apollo Client 2 starter project with React and Express. [Read more about it in this tutorial to build it yourself](https://www.robinwieruch.de/graphql-apollo-server-tutorial/).
+A full-fledged Apollo Server with Apollo Client starter project with React and Express. [Read more about it in this tutorial to build it yourself](https://www.robinwieruch.de/graphql-apollo-server-tutorial/).
 
-This is the client project which uses React. You can find various working server applications that can be used with this client.
+**This repository is the fullstack React client. You can find various working server applications that can be used with this client in the list below:**
 
 * [PostgreSQL](https://github.com/the-road-to-graphql/fullstack-apollo-express-postgresql-boilerplate)
 * [MongoDB](#)
