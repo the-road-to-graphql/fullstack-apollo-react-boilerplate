@@ -11,7 +11,6 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 
 import App from './components/App';
 import { signOut } from './components/SignOut';
-import registerServiceWorker from './registerServiceWorker';
 
 const httpLink = new HttpLink({
   uri: 'http://localhost:8000/graphql',
@@ -81,5 +80,3 @@ ReactDOM.render(
   </ApolloProvider>,
   document.getElementById('root'),
 );
-
-registerServiceWorker();
