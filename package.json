@@ -1,6 +1,7 @@
 {
   "name": "fullstack-apollo-react-boilerplate-project",
   "version": "0.1.0",
+  "author": "Robin Wieruch <hello@rwieruch.com> (https://www.robinwieruch.de)",
   "dependencies": {
     "apollo-cache-inmemory": "^1.3.7",
     "apollo-client": "^2.4.4",
