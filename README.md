@@ -30,7 +30,7 @@ A full-fledged Apollo Server with Apollo Client starter project with React and E
 
 ## Installation
 
-* `git clone git@github.com:rthe-road-to-graphql/fullstack-apollo-react-boilerplate.git`
+* `git clone git@github.com:the-road-to-graphql/fullstack-apollo-react-boilerplate.git`
 * `cd fullstack-apollo-react-boilerplate`
 * `npm install`
 * `npm start`
