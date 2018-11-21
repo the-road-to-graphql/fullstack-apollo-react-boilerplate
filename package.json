@@ -17,7 +17,7 @@
     "react-apollo": "^2.3.1",
     "react-dom": "^16.6.3",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.0",
+    "react-scripts": "2.1.1",
     "subscriptions-transport-ws": "^0.9.15"
   },
   "scripts": {
@@ -25,5 +25,11 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom --passWithNoTests",
     "eject": "react-scripts eject"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
