@@ -84,20 +84,23 @@ class SignUpForm extends Component {
               onChange={this.onChange}
               type="text"
               placeholder="Email Address"
+              autoComplete="username"
             />
             <input
-              name="password"
-              value={password}
-              onChange={this.onChange}
-              type="password"
-              placeholder="Password"
+                name="password"
+                value={password}
+                onChange={this.onChange}
+                type="password"
+                placeholder="Password"
+                autoComplete="new-password"
             />
             <input
-              name="passwordConfirmation"
-              value={passwordConfirmation}
-              onChange={this.onChange}
-              type="password"
-              placeholder="Confirm Password"
+                name="passwordConfirmation"
+                value={passwordConfirmation}
+                onChange={this.onChange}
+                type="password"
+                placeholder="Confirm Password"
+                autoComplete="new-password"
             />
             <button disabled={isInvalid || loading} type="submit">
               Sign Up
