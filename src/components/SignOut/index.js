@@ -15,7 +15,7 @@ const SignOutButton = () => (
 );
 
 const signOut = client => {
-  localStorage.setItem('token', '');
+  localStorage.removeItem('token');
   client.resetStore();
   history.push(routes.SIGN_IN);
 };

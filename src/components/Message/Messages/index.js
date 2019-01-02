@@ -4,6 +4,7 @@ import gql from 'graphql-tag';
 
 import MessageDelete from '../MessageDelete';
 import Loading from '../../Loading';
+import withSession from '../../Session/withSession';
 
 const MESSAGE_CREATED = gql`
   subscription {
@@ -42,7 +43,7 @@ const GET_PAGINATED_MESSAGES_WITH_USERS = gql`
   }
 `;
 
-const Messages = ({ limit, me }) => (
+const Messages = ({ limit }) => (
   <Query
     query={GET_PAGINATED_MESSAGES_WITH_USERS}
     variables={{ limit }}
@@ -69,7 +70,6 @@ const Messages = ({ limit, me }) => (
         <Fragment>
           <MessageList
             messages={edges}
-            me={me}
             subscribeToMore={subscribeToMore}
           />
 
@@ -154,25 +154,28 @@ class MessageList extends Component {
   }
 
   render() {
-    const { messages, me } = this.props;
+    const { messages } = this.props;
 
     return messages.map(message => (
-      <MessageItem key={message.id} message={message} me={me} />
+      <MessageItem key={message.id} message={message} />
     ));
   }
 }
 
-const MessageItem = ({ message, me }) => (
+const MessageItemBase = ({ message, session }) => (
   <div>
     <h3>{message.user.username}</h3>
     <small>{message.createdAt}</small>
     <p>{message.text}</p>
 
-    {me &&
-      message.user.id === me.id && (
+    {session &&
+      session.me &&
+      message.user.id === session.me.id && (
         <MessageDelete message={message} />
       )}
   </div>
 );
+
+const MessageItem = withSession(MessageItemBase);
 
 export default Messages;

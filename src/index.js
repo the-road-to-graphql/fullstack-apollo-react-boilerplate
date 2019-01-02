@@ -35,12 +35,15 @@ const terminatingLink = split(
 );
 
 const authLink = new ApolloLink((operation, forward) => {
-  operation.setContext(({ headers = {} }) => ({
-    headers: {
-      ...headers,
-      'x-token': localStorage.getItem('token'),
-    },
-  }));
+  operation.setContext(({ headers = {} }) => {
+    const token = localStorage.getItem('token');
+
+    if (token) {
+      headers = { ...headers, 'x-token': token };
+    }
+
+    return { headers };
+  });
 
   return forward(operation);
 });
@@ -50,7 +53,7 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
     graphQLErrors.forEach(({ message, locations, path }) => {
       console.log('GraphQL error', message);
 
-      if (message === 'NOT_AUTHENTICATED') {
+      if (message === 'UNAUTHENTICATED') {
         signOut(client);
       }
     });
